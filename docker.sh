@@ -32,3 +32,7 @@ sudo apt update
 echo "Docker installing"
 sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y 
 echo "Docker installed"
+
+
+# curl -fsSL https://raw.githubusercontent.com/sharp-and-tannan/steup/refs/heads/main/docker.sh | bash
+
