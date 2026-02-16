@@ -98,3 +98,8 @@ networks:
 
 
 # docker run -d --name selenium-node-4 --network shippingbill_selenium-network -e SE_EVENT_BUS_HOST=selenium-hub -e SE_EVENT_BUS_PUBLISH_PORT=4442 -e SE_EVENT_BUS_SUBSCRIBE_PORT=4443 -e SE_VNC_NO_PASSWORD=1 -e SE_NODE_MAX_SESSIONS=20 -e SE_NODE_OVERRIDE_MAX_SESSIONS=true  selenium/node-chrome:4.19
+
+
+# wget https://raw.githubusercontent.com/sharp-and-tannan/steup/refs/heads/main/selenium-docker-compose.yml
+# docker compose -f selenium-docker-compose.yml up -d
+
