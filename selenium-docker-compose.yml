@@ -62,7 +62,7 @@ services:
 
   chrome-node-4:
     image: selenium/node-chrome:4.19    
-    container_name: chrome-node-3
+    container_name: chrome-node-4
     depends_on:
       - selenium-hub
     environment:
@@ -76,21 +76,7 @@ services:
     networks:
       - selenium-network
 
-  chrome-node-5:
-    image: selenium/node-chrome:4.19    
-    container_name: chrome-node-3
-    depends_on:
-      - selenium-hub
-    environment:
-      - SE_EVENT_BUS_HOST=selenium-hub
-      - SE_EVENT_BUS_PUBLISH_PORT=4442
-      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
-      - SE_VNC_NO_PASSWORD=1
-      - SE_NODE_MAX_SESSIONS=10        
-      - SE_NODE_OVERRIDE_MAX_SESSIONS=true
-    shm_size: 2gb
-    networks:
-      - selenium-network
+
       
 networks:
   selenium-network:
