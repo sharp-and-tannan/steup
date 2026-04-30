@@ -45,3 +45,11 @@ To verify Docker has been uninstalled properly, you can check if Docker commands
 docker --version
 
 If Docker has been removed successfully, you should get an error stating that Docker is not recognized.
+
+
+
+
+
+
+Invoke-WebRequest -UseBasicParsing "https://raw.githubusercontent.com/microsoft/Windows-Containers/Main/helpful_tools/Install-DockerCE/remove-docker-ce.ps1" -OutFile remove-docker-ce.ps1
+.\remove-docker-ce.ps1
