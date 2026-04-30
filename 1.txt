@@ -7,3 +7,5 @@ curl -fsSL https://raw.githubusercontent.com/sharp-and-tannan/steup/refs/heads/m
 docker run --name postgres-container -e POSTGRES_USER=root -e POSTGRES_PASSWORD=toor -p 5432:5432 -d postgres
 
 docker run -d --name shreno-dms-backend -p 3001:3001 -e CORS_ORIGIN=http://172.22.60.32:5173 -e FRONTEND_URL=http://172.22.60.32:5173 -e BACKEND_URL=http://172.22.60.32:3001 -e DATABASE_URL="postgresql://root:toor@host.docker.internal:5432/dms" -v /d/dms:/app/data sharpandtannan/shreno-dms-backend:1
+
+docker run -p 5173:80 sharpandtannan/shreno-dms-frontend:1
