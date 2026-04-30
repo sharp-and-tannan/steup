@@ -5,3 +5,5 @@ curl -fsSL https://raw.githubusercontent.com/sharp-and-tannan/steup/refs/heads/m
 
 
 docker run --name postgres-container -e POSTGRES_USER=root -e POSTGRES_PASSWORD=toor -p 5432:5432 -d postgres
+
+docker run -d --name shreno-dms-backend -p 3001:3001 sharpandtannan/shreno-dms-backend:1
