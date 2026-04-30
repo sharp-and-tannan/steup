@@ -1,2 +1,47 @@
-dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
-dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+Step 1: Uninstall Docker Packages
+Open PowerShell as Administrator.
+
+Run the following command to uninstall Docker and its components:
+
+Uninstall-Package -Name docker -Force
+Step 2: Remove Docker Dependencies and Containers
+
+Stop Docker services and containers:
+
+Stop-Service -Name docker
+
+Remove all Docker containers and images:
+
+docker container prune -f
+docker image prune -a -f
+
+This will remove all unused containers and images.
+
+Step 3: Uninstall Docker via Windows Features (if applicable)
+
+If you installed Docker via the Windows Features (like Windows Containers), you may also want to remove it from the Windows features list:
+
+Open PowerShell as Administrator.
+
+Run this command to remove Windows Containers (if Docker is installed via the Windows feature):
+
+dism.exe /online /disable-feature /featurename:Containers /norestart
+2. Clean Up Docker Files
+
+To completely remove Docker, you can also delete the Docker-related folders and configuration files.
+
+Delete Docker data:
+
+Remove-Item -Recurse -Force C:\ProgramData\Docker
+Remove-Item -Recurse -Force C:\ProgramData\docker
+
+Remove any Docker-related configuration directories (if applicable):
+
+Remove-Item -Recurse -Force C:\Program Files\Docker
+3. Verify Uninstallation
+
+To verify Docker has been uninstalled properly, you can check if Docker commands are still available:
+
+docker --version
+
+If Docker has been removed successfully, you should get an error stating that Docker is not recognized.
