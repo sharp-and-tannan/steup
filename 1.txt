@@ -4,3 +4,6 @@ Invoke-WebRequest -UseBasicParsing "https://raw.githubusercontent.com/microsoft/
 .\uninstall-docker-ce.ps1
 
 curl -fsSL https://raw.githubusercontent.com/sharp-and-tannan/steup/refs/heads/main/docker.sh | bash
+
+
+docker run --name postgres-container -e POSTGRES_USER=root -e POSTGRES_PASSWORD=toor -p 5432:5432 -d postgres
