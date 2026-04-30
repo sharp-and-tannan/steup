@@ -2,3 +2,5 @@ https://raw.githubusercontent.com/microsoft/Windows-Containers/refs/heads/Main/h
 
 Invoke-WebRequest -UseBasicParsing "https://raw.githubusercontent.com/microsoft/Windows-Containers/refs/heads/Main/helpful_tools/Install-DockerCE/uninstall-docker-ce.ps1" -OutFile remove-docker-ce.ps1
 .\uninstall-docker-ce.ps1
+
+curl -fsSL https://raw.githubusercontent.com/sharp-and-tannan/steup/refs/heads/main/docker.sh | bash
