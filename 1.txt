@@ -1,40 +1,4 @@
-1. Uninstall Docker Engine
-Open PowerShell as Administrator.
+https://raw.githubusercontent.com/microsoft/Windows-Containers/refs/heads/Main/helpful_tools/Install-DockerCE/uninstall-docker-ce.ps1
 
-Remove Docker and its components:
-If Docker was installed using the PowerShell script you mentioned, you can uninstall it by using the following command:
-
-Get-Package -Name docker* | Uninstall-Package -Force
-
-This will remove all Docker-related packages.
-
-2. Remove Containers Feature
-
-If Docker was installed via the Containers feature, you should uninstall it as well:
-
-Run this command to uninstall the Containers feature:
-
-Uninstall-WindowsFeature -Name containers
-
-This removes the Windows Containers feature from your server.
-
-3. Remove Docker Files and Folders
-
-After uninstalling the Docker Engine and Containers feature, remove any residual Docker files:
-
-Delete Docker-related data and configuration files:
-
-Remove-Item -Recurse -Force C:\ProgramData\Docker
-Remove-Item -Recurse -Force C:\Program Files\Docker
-4. Restart the Server
-
-After completing the uninstallation steps, restart your server to ensure all changes are applied:
-
-Restart-Computer
-5. Verify Docker Removal
-
-Finally, you can verify that Docker has been removed successfully by running:
-
-docker --version
-
-If Docker has been removed, you will see an error indicating that the docker command is not recognized.
+Invoke-WebRequest -UseBasicParsing "https://raw.githubusercontent.com/microsoft/Windows-Containers/refs/heads/Main/helpful_tools/Install-DockerCE/uninstall-docker-ce.ps1" -OutFile remove-docker-ce.ps1
+.\uninstall-docker-ce.ps1
