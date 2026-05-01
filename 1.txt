@@ -11,3 +11,9 @@ docker run -d --name shreno-dms-backend -p 3001:3001 -e CORS_ORIGIN=http://172.2
 docker run -p 5173:80 sharpandtannan/shreno-dms-frontend:1
 
 VITE_BACKEND_URL=http://172.22.60.32:3001
+
+
+[network]
+generateResolvConf = false
+address = 192.168.100.1
+
