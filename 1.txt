@@ -29,3 +29,26 @@ hostAddressLoopback=true
 wsl --install -d kali-linux
 
 https://drive.google.com/file/d/1V9if5Xs4SQ7YG_Xf8hi2eh9ZV9WyD4Yf/view?usp=drive_link
+
+
+
+
+
+
+const express = require("express");
+const path = require("path");
+
+const app = express();
+const PORT = process.env.PORT || 5173;
+
+const distPath = path.join(__dirname, "dist");
+
+app.use(express.static(distPath));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(distPath, "index.html"));
+});
+
+app.listen(PORT, () => {
+  console.log(`Vite frontend running on http://localhost:${PORT}`);
+});
