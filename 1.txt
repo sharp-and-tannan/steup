@@ -28,3 +28,4 @@ hostAddressLoopback=true
 
 wsl --install -d kali-linux
 
+https://drive.google.com/file/d/1V9if5Xs4SQ7YG_Xf8hi2eh9ZV9WyD4Yf/view?usp=drive_link
