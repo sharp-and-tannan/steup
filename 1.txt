@@ -63,3 +63,37 @@ npm install pm2-windows-startup -g
 pm2-startup install
 
 pm2 save
+
+
+
+
+
+
+
+
+
+yourdomain.com {
+    tls C:/caddy/ssl/fullchain.pem C:/caddy/ssl/privkey.pem
+
+    handle_path /api/* {
+        reverse_proxy localhost:3000
+    }
+
+    handle {
+        reverse_proxy localhost:5173
+    }
+}
+
+
+caddy run --config Caddyfile
+
+caddy reload --config Caddyfile
+
+C:/caddy/ssl/fullchain.pem
+C:/caddy/ssl/privkey.pem
+
+
+
+
+
+
